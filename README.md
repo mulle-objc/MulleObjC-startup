@@ -1,81 +1,60 @@
-# MulleObjC
+# MulleObjC-startup
 
-💎 A collection of Objective-C root classes for mulle-objc
+▶️ Startup library for MulleObjC
 
-MulleObjC supplies the most basic runtime components to build a foundation
-on top of it. MulleObjC fundamentally depends on standard C libraries only
-(f.e. no `<unistd.h>`)
+This static library provides the required `__register_mulle_objc_universe`
+function for executables, that link against
+[MulleObjC](https://github.com/mulle-objc/MulleObjC).
+
+Use this library, if you want to create executables, that only
+require the [MulleObjC](//github.com/mulle-objc/MulleObjC)
+and nothing else. Often projects will link against the
+[Foundation](https://github.com/mulle-objc/Foundation) though, and will use
+its startup library.
 
 
- Build Status | Release Version
---------------|-----------------------------------
-[![Build Status](https://travis-ci.org/mulle-objc/MulleObjC.svg)](https://travis-ci.org/mulle-objc/MulleObjC) | ![Community tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleObjC.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleObjC)
+
+Build Status | Release Version
+-------------|-----------------------------------
+[![Build Status](https://travis-ci.org/mulle-objc/MulleObjC-startup.svg)](https://travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleObjC-startup.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleObjC-startup)
 
 
-### Objects
+## Sourcetree
 
-* NSAutoreleasePool - garbage collection
-* NSCoder - object serialization
-* NSObject - the root class of everything
-* NSLock - locking for threading
-* NSRecursiveLock - recursive locking for threading
-* NSInvocation - method call serialization
-* NSMethodSignature - method description
-* NSProxy - the other root class of everything :=)
-* NSThread - threads
+The main raison d'être of MulleObjC-startup as a seperate library
+is to bequeath the required dependencies
+[mulle-atinit](//github.com/mulle-core/mulle-atinit) and
+[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking with the
+executable.
 
-### Protocols
-
-* NSCoding - object serialization
-* NSCopying - object copying
-* NSFastEnumeration  - support for `for ... in` loops
-* NSLocking  - support for `for ... in` loops
-* NSObject - for objects that don't want to behave like NSObject but can't be them
-* MulleObjCClassCluster - enables classes to act as class clusters
-* MulleObjCException - enabled a class to act as an exception
-* MulleObjCRuntimeObject - documents the minimum required id superset
-* MulleObjCSingleton - enables classes to produce singletons
-* MulleObjCTaggedPointer - enables classes to use tagged pointers
-
-It does all the interfacing with the **mulle-objc** runtime. Any
-library code above MulleObjC ideally, should not be using the mulle-objc runtime
-directly. Creating a foundation on top of **mulle-objc**  without using
-**MulleObjC** is a foolhardy endeavor IMO.
-
-MulleObjC must be compiled with the **mulle-clang** compiler, or a compiler
-which supports the metaABI required for the mulle-objc runtime.
-
-## Required Libraries and Tools
-
-![Libraries and Tools](https://raw.githubusercontent.com/mulle-objc/MulleObjC/release/dox/MulleObjC-dependencies.png)
-
-  Name         | Build Status | Release Version
----------------|--------------|---------------------------------
-[mulle-container](//github.com/mulle-c/mulle-container) | [![Build Status](https://travis-ci.org/mulle-c/mulle-container.svg?branch=release)](https://travis-ci.org/mulle-c/mulle-container) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-c/mulle-container.svg) [![Build Status](https://travis-ci.org/mulle-c/mulle-container.svg?branch=release)](https://travis-ci.org/mulle-c/mulle-container)
-[mulle-objc-list](//github.com/mulle-objc/mulle-objc-list) | [![Build Status](https://travis-ci.org/mulle-objc/mulle-objc-list.svg?branch=release)](https://travis-ci.org/mulle-objc/mulle-objc-list) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/mulle-objc-list.svg) [![Build Status](https://travis-ci.org/mulle-objc/mulle-objc-list.svg?branch=release)](https://travis-ci.org/mulle-objc/mulle-objc-list)
-[mulle-objc-runtime](//github.com/mulle-objc/mulle-objc-runtime) | [![Build Status](https://travis-ci.org/mulle-objc/mulle-objc-runtime.svg?branch=release)](https://travis-ci.org/mulle-objc/mulle-objc-runtime) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/mulle-objc-runtime.svg) [![Build Status](https://travis-ci.org/mulle-objc/mulle-objc-runtime.svg?branch=release)](https://travis-ci.org/mulle-objc/mulle-objc-runtime)
 
 ## Install
 
 See [mulle-objc-developer](//github.com/mulle-objc/mulle-objc-developer) for
 installation instructions.
 
-> Otherwise read:
->
-> * [How to Build](dox/BUILD.md)
->
 
+## Build
 
-## Acknowledgements
+### Manually with cmake
 
-Parts of this library:
+Install all above prerequisites:
+
+now build the project
 
 ```
-Copyright (c) 2006-2007 Christopher J. W. Lloyd
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+(
+   mkdir build &&
+   cd build &&
+   cmake .. &&
+   make
+)
 ```
+
+### Conveniently with mulle-sde
+
+Install [mulle-sde]/(//github.com/mulle-sde) and run `mulle-sde craft`.
+
 
 ### Platforms and Compilers
 
