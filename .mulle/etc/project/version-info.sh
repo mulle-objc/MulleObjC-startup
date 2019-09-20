@@ -1,1 +1,1 @@
-VERSIONFILE="src/ns_rootconfiguration.h"
+VERSIONFILE=src/MulleObjC-startup.m
