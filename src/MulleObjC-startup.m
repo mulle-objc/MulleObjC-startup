@@ -35,19 +35,14 @@
 //
 #define _GNU_SOURCE
 
-#import "import-private.h"
+#import <MulleObjC/MulleObjC.h>
 
-#import "mulle-objc-type.h"
-#import "MulleObjCIntegralType.h"
-#import "MulleObjCExceptionHandler.h"
-#import "version.h"
+#import <MulleObjC/private/mulle-objc-exceptionhandlertable-private.h>
+#import <MulleObjC/private/mulle-objc-universefoundationinfo-private.h>
+#import <MulleObjC/private/mulle-objc-universeconfiguration-private.h>
+#import <MulleObjC/private/MulleObjCExceptionHandler-Private.h>
 
-#import "mulle-objc-exceptionhandlertable-private.h"
-#import "mulle-objc-universefoundationinfo-private.h"
-#import "mulle-objc-universeconfiguration-private.h"
-#import "MulleObjCExceptionHandler-Private.h"
-
-#include "mulle-objc-startup-private.inc"
+#include <MulleObjC/private/mulle-objc-startup-private.inc>
 
 // std-c and other dependencies
 #include <stdlib.h>
