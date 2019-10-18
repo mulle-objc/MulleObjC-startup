@@ -17,6 +17,7 @@ tmp/
 tmp.*
 *.old
 *.bak
+.vscode/
 
 call-benchmark/
 protocol-benchmark/
