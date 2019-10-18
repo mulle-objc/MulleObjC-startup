@@ -48,7 +48,7 @@
 #include <stdlib.h>
 
 
-#define MULLE_OBJC_STARTUP_VERSION  ((0 << 24) | (1 << 16) | 0)
+#define MULLE_OBJC_STARTUP_VERSION  ((0 << 24) | (16 << 8) | 0)
 
 
 static void   bang( struct _mulle_objc_universe *universe,
