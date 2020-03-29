@@ -48,9 +48,12 @@
 #include <stdlib.h>
 
 
-#define MULLE_OBJC_STARTUP_VERSION  ((0 << 24) | (16 << 8) | 0)
+#define MULLE_OBJC_STARTUP_VERSION  ((0 << 20) | (17 << 8) | 0)
 
 
+//
+// starts MulleObjCBang with is defined in mulle-objc-startup-private.inc
+//
 static void   bang( struct _mulle_objc_universe *universe,
                     struct mulle_allocator *allocator,
                     void *userinfo)

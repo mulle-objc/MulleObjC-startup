@@ -1,3 +1,8 @@
+## 0.17.0
+
+* Various small improvements
+
+
 ## 0.16.0
 
 * readonly properties aren't cleared anymore for compatibility
@@ -16,7 +21,7 @@
 * use modernized mulle-sde-developer include/import scheme
 * moved compiler and runtime tests to mulle-objc-runtime
 * migrated to mulle-sde
-* `_MulleObjCObjectReleaseProperties` is now `_MulleObjCObjectClearProperties` because we also clean C pointers
+* `_MulleObjCObjectReleaseProperties` is now `_MulleObjCInstanceClearProperties` because we also clean C pointers
 * ... `infinite_retain` became infiniteretain
 * Separate startup from standalone
 * add MulleObjCGetObjectIvar and friends

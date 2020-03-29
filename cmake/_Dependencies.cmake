@@ -15,7 +15,7 @@ if( NOT MULLE_OBJC_HEADER)
    message( STATUS "MULLE_OBJC_HEADER is ${MULLE_OBJC_HEADER}")
 
    #
-   # Add to list of header files.
+   # Add MULLE_OBJC_HEADER to HEADER_ONLY_LIBRARIES list.
    # Disable with: `mulle-sourcetree mark MulleObjC no-cmakeadd`
    #
    set( HEADER_ONLY_LIBRARIES
@@ -85,7 +85,7 @@ if( NOT MULLE_ATINIT_LIBRARY)
    #
    if( MULLE_ATINIT_LIBRARY)
       #
-      # Add to MULLE_ATINIT_LIBRARY list.
+      # Add MULLE_ATINIT_LIBRARY to STARTUP_ALL_LOAD_DEPENDENCY_LIBRARIES list.
       # Disable with: `mulle-sourcetree mark mulle-atinit no-cmakeadd`
       #
       set( STARTUP_ALL_LOAD_DEPENDENCY_LIBRARIES
@@ -170,7 +170,7 @@ if( NOT MULLE_ATEXIT_LIBRARY)
    #
    if( MULLE_ATEXIT_LIBRARY)
       #
-      # Add to MULLE_ATEXIT_LIBRARY list.
+      # Add MULLE_ATEXIT_LIBRARY to STARTUP_ALL_LOAD_DEPENDENCY_LIBRARIES list.
       # Disable with: `mulle-sourcetree mark mulle-atexit no-cmakeadd`
       #
       set( STARTUP_ALL_LOAD_DEPENDENCY_LIBRARIES
@@ -255,7 +255,7 @@ if( NOT MULLE_DLFCN_LIBRARY)
    #
    if( MULLE_DLFCN_LIBRARY)
       #
-      # Add to MULLE_DLFCN_LIBRARY list.
+      # Add MULLE_DLFCN_LIBRARY to DEPENDENCY_LIBRARIES list.
       # Disable with: `mulle-sourcetree mark mulle-dlfcn no-cmakeadd`
       #
       set( DEPENDENCY_LIBRARIES
