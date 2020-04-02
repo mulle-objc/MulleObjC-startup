@@ -13,3 +13,5 @@ mulle-objc/objc-demo;extra
 mulle-sde/vscode-clang;extra
 mulle-sde/vscode;extra
 mulle-c/travis;extra
+mulle-sde/travis;extra
+mulle-objc/travis;extra
