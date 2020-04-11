@@ -4,7 +4,10 @@
 
 This static library provides the required `__register_mulle_objc_universe`
 function for executables, that link against
-[MulleObjC](https://github.com/mulle-objc/MulleObjC).
+[MulleObjC](https://github.com/mulle-objc/MulleObjC). 
+It also bequeaths the required dependencies
+[mulle-atinit](//github.com/mulle-core/mulle-atinit) and
+[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking.
 
 Use this library, if you want to create executables, that only
 require the [MulleObjC](//github.com/mulle-objc/MulleObjC)
@@ -13,47 +16,26 @@ and nothing else. Often projects will link against the
 its startup library.
 
 
-
 Build Status | Release Version
 -------------|-----------------------------------
 [![Build Status](https://travis-ci.org/mulle-objc/MulleObjC-startup.svg)](https://travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleObjC-startup.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleObjC-startup)
 
 
-## Sourcetree
+## Add 
 
-The main raison d'être of MulleObjC-startup as a seperate library
-is to bequeath the required dependencies
-[mulle-atinit](//github.com/mulle-core/mulle-atinit) and
-[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking with the
-executable.
+Use [mulle-sde](//github.com/mulle-sde) to add MulleObjC-startup to your project:
 
+```
+mulle-sde dependency add --objc \
+                         --github mulle-objc \
+                         --marks no-intermediate-link,no-dynamic-link 
+                         MulleObjC-startup
+```
 
 ## Install
 
-See [mulle-objc-developer](//github.com/mulle-objc/mulle-objc-developer) for
-installation instructions.
-
-
-## Build
-
-### Manually with cmake
-
-Install all above prerequisites:
-
-now build the project
-
-```
-(
-   mkdir build &&
-   cd build &&
-   cmake .. &&
-   make
-)
-```
-
-### Conveniently with mulle-sde
-
-Install [mulle-sde]/(//github.com/mulle-sde) and run `mulle-sde craft`.
+See [mulle-objc-developer](//github.com/mulle-objc/mulle-objc-developer) for the preferred
+way to install MulleObjC-startup
 
 
 ### Platforms and Compilers
