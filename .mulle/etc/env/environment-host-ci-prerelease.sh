@@ -251,3 +251,21 @@ export MULLE_OBJC_LIST_URL="https://github.com/mulle-objc/mulle-objc-list.git"
 export MULLE_OBJC_LIST_BRANCH="prerelease"
 
 
+#
+#
+#
+export MULLE_DATA_NODETYPE="git"
+
+
+#
+#
+#
+export MULLE_DATA_BRANCH="prerelease"
+
+
+#
+#
+#
+export MULLE_DATA_URL="https://github.com/mulle-c/mulle-data.git"
+
+
