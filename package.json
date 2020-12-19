@@ -1,0 +1,19 @@
+{
+   "name" : "MulleObjC",
+   "version" : "0.18.0",
+   "description" : "▶️  Startup library for MulleObjC",
+   "homepage" : "https://github.com/mulle-objc/MulleObjC-startup",
+   "bugs" : "https://github.com/mulle-objc/MulleObjC-startup/issues",
+   "keywords" : [],
+   "license" : "BSD-3-Clause",
+   "repository" : {
+      "type" : "git",
+      "url" : "mulle-objc/MulleObjC-startup"
+   },
+   "dependencies" : {
+      "MulleObjC" : "mulle-objc/MulleObjC",
+      "mulle-atinit" : "mulle-core/mulle-atinit",
+      "mulle-atexit" : "mulle-core/mulle-atexit",
+      "mulle-dlfcn" : "mulle-core/mulle-dlfcn"
+   }
+}
