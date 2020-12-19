@@ -1,6 +1,6 @@
 # MulleObjC-startup
 
-▶️ Startup library for MulleObjC
+#### ▶️  Startup library for MulleObjC
 
 This static library provides the required `__register_mulle_objc_universe`
 function for executables, that link against
