@@ -14,7 +14,7 @@ endif()
 #
 # Generated from sourcetree: aafcacf4-d862-483c-a5d9-5ea57118afc2;MulleObjC;no-all-load,no-bequeath,no-link,no-singlephase;
 # Disable with : `mulle-sourcetree mark MulleObjC no-header`
-# Disable for this platform: `mulle-sourcetree mark MulleObjC no-cmake-platform-darwin`
+# Disable for this platform: `mulle-sourcetree mark MulleObjC no-cmake-platform-${MULLE_UNAME}`
 #
 if( NOT MULLE_OBJC_HEADER)
    find_file( MULLE_OBJC_HEADER NAMES MulleObjC.h MulleObjC/MulleObjC.h)
@@ -82,7 +82,7 @@ endif()
 #
 # Generated from sourcetree: 5a27156e-5b42-4ef0-90a5-093358ed83a2;mulle-dlfcn;no-actual-link,no-all-load,no-cmake-searchpath,no-import,no-public,no-singlephase;
 # Disable with : `mulle-sourcetree mark mulle-dlfcn no-header`
-# Disable for this platform: `mulle-sourcetree mark mulle-dlfcn no-cmake-platform-darwin`
+# Disable for this platform: `mulle-sourcetree mark mulle-dlfcn no-cmake-platform-${MULLE_UNAME}`
 #
 if( NOT MULLE_DLFCN_HEADER)
    find_file( MULLE_DLFCN_HEADER NAMES mulle-dlfcn.h mulle-dlfcn/mulle-dlfcn.h)
@@ -150,7 +150,7 @@ endif()
 #
 # Generated from sourcetree: 8c85d1ab-bece-4726-aa46-f9e9e4e7000a;mulle-atinit;no-cmake-searchpath,no-dynamic-link,no-import,no-intermediate-link,no-public,no-singlephase;
 # Disable with : `mulle-sourcetree mark mulle-atinit no-link`
-# Disable for this platform: `mulle-sourcetree mark mulle-atinit no-cmake-platform-darwin`
+# Disable for this platform: `mulle-sourcetree mark mulle-atinit no-cmake-platform-${MULLE_UNAME}`
 #
 if( NOT MULLE_ATINIT_LIBRARY)
    find_library( MULLE_ATINIT_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-atinit${CMAKE_STATIC_LIBRARY_SUFFIX} NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
@@ -230,7 +230,7 @@ endif()
 #
 # Generated from sourcetree: c703e494-09ac-4a1f-bffc-bdb12a3af507;mulle-atexit;no-cmake-searchpath,no-dynamic-link,no-import,no-intermediate-link,no-public,no-singlephase;
 # Disable with : `mulle-sourcetree mark mulle-atexit no-link`
-# Disable for this platform: `mulle-sourcetree mark mulle-atexit no-cmake-platform-darwin`
+# Disable for this platform: `mulle-sourcetree mark mulle-atexit no-cmake-platform-${MULLE_UNAME}`
 #
 if( NOT MULLE_ATEXIT_LIBRARY)
    find_library( MULLE_ATEXIT_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-atexit${CMAKE_STATIC_LIBRARY_SUFFIX} NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
