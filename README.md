@@ -4,7 +4,7 @@
 
 This static library provides the required `__register_mulle_objc_universe`
 function for executables, that link against
-[MulleObjC](https://github.com/mulle-objc/MulleObjC). 
+[MulleObjC](//github.com/mulle-objc/MulleObjC).
 It also bequeaths the required dependencies
 [mulle-atinit](//github.com/mulle-core/mulle-atinit) and
 [mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking.
@@ -12,13 +12,13 @@ It also bequeaths the required dependencies
 Use this library, if you want to create executables, that only
 require the [MulleObjC](//github.com/mulle-objc/MulleObjC)
 and nothing else. Often projects will link against the
-[Foundation](https://github.com/mulle-objc/Foundation) though, and will use
+[Foundation](//github.com/MulleFoundation/Foundation) though, and will use
 its startup library.
 
 
 Build Status | Release Version
 -------------|-----------------------------------
-[![Build Status](https://travis-ci.org/mulle-objc/MulleObjC-startup.svg)](https://travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg) [![Build Status](https://travis-ci.org/mulle-objc/MulleObjC-startup.svg?branch=release)](https://travis-ci.org/mulle-objc/MulleObjC-startup)
+[![Build Status](//travis-ci.org/mulle-objc/MulleObjC-startup.svg)](//travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](//img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg) [![Build Status](//travis-ci.org/mulle-objc/MulleObjC-startup.svg?branch=release)](//travis-ci.org/mulle-objc/MulleObjC-startup)
 
 
 ## Add 
