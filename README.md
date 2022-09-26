@@ -18,14 +18,14 @@ its startup library.
 
 Build Status | Release Version
 -------------|-----------------------------------
-[![Build Status](//travis-ci.org/mulle-objc/MulleObjC-startup.svg)](//travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](//img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg) [![Build Status](//travis-ci.org/mulle-objc/MulleObjC-startup.svg?branch=release)](//travis-ci.org/mulle-objc/MulleObjC-startup)
+[![Build Status](https://github.com/mulle-objc/MulleObjC-startup.svg)](//travis-ci.org/mulle-objc/mulle-objc) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg) [![Build Status](https://github.com/mulle-objc/MulleObjC-startup.svg?branch=release)](//travis-ci.org/mulle-objc/MulleObjC-startup)
 
 
 ## Add 
 
 Use [mulle-sde](//github.com/mulle-sde) to add MulleObjC-startup to your project:
 
-```
+``` sh
 mulle-sde dependency add --objc \
                          --github mulle-objc \
                          --marks no-intermediate-link,no-dynamic-link 
