@@ -8,7 +8,7 @@
    "license" : "BSD-3-Clause",
    "repository" : {
       "type" : "git",
-      "url" : "mulle-objc/MulleObjC-startup"
+      "url" : "github:mulle-objc/MulleObjC-startup"
    },
    "dependencies" : {
       "mulle-atinit" : "git://github.com/mulle-core/mulle-atinit",
