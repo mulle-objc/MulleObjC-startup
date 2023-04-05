@@ -37,18 +37,18 @@
 
 #import <MulleObjC/MulleObjC.h>
 
-#import <MulleObjC/private/mulle-objc-exceptionhandlertable-private.h>
-#import <MulleObjC/private/mulle-objc-universefoundationinfo-private.h>
-#import <MulleObjC/private/mulle-objc-universeconfiguration-private.h>
-#import <MulleObjC/private/MulleObjCExceptionHandler-Private.h>
+#import <MulleObjC/mulle-objc-exceptionhandlertable-private.h>
+#import <MulleObjC/mulle-objc-universefoundationinfo-private.h>
+#import <MulleObjC/mulle-objc-universeconfiguration-private.h>
+#import <MulleObjC/MulleObjCExceptionHandler-Private.h>
 
-#include <MulleObjC/private/mulle-objc-startup-private.inc>
+#include <MulleObjC/mulle-objc-startup-private.inc>
 
 // std-c and other dependencies
 #include <stdlib.h>
 
 
-#define MULLE_OBJC_STARTUP_VERSION  ((0 << 20) | (20 << 8) | 2)
+#define MULLE_OBJC_STARTUP_VERSION  ((0 << 20) | (20 << 8) | 3)
 
 
 //
