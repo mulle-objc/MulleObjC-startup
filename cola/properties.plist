@@ -1,0 +1,47 @@
+{
+   project =
+   {
+      description="▶️  Startup library for MulleObjC";
+      domain="github";
+      name="MulleObjC-startup";
+      user="mulle-objc";
+      repo="MulleObjC-startup";
+      homepage="https://github.com/mulle-objc/MulleObjC-startup";
+      license="BSD-3-Clause"
+   };
+   dependencies =
+   (
+      {
+         description="🤱🏼 Compatibility library for deterministic initializers";
+         domain="github";
+         name="mulle-atinit";
+         repo="mulle-atinit";
+         url="https://github.com/mulle-core/mulle-atinit";
+         user="mulle-core";
+      },
+      {
+         description="💎 A collection of Objective-C root classes for mulle-objc";
+         domain="github";
+         name="MulleObjC";
+         repo="MulleObjC";
+         url="https://github.com/mulle-objc/MulleObjC";
+         user="mulle-objc";
+      },
+      {
+         description="👼 Compatibility library to fix atexit";
+         domain="github";
+         name="mulle-atexit";
+         repo="mulle-atexit";
+         url="https://github.com/mulle-core/mulle-atexit";
+         user="mulle-core";
+      },
+      {
+         description="♿️ Shared library helper";
+         domain="github";
+         name="mulle-dlfcn";
+         repo="mulle-dlfcn";
+         url="https://github.com/mulle-core/mulle-dlfcn";
+         user="mulle-core";
+      }
+   )
+}

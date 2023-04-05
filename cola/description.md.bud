@@ -1,0 +1,12 @@
+This static library provides the required `__register_mulle_objc_universe`
+function for executables, that link against
+[MulleObjC](//github.com/mulle-objc/MulleObjC).
+It also bequeaths the required dependencies
+[mulle-atinit](//github.com/mulle-core/mulle-atinit) and
+[mulle-atexit](//github.com/mulle-core/mulle-atexit) for linking.
+
+Use this library, if you want to create executables, that only
+require the [MulleObjC](//github.com/mulle-objc/MulleObjC)
+and nothing else. Often projects will link against the
+[Foundation](//github.com/MulleFoundation/Foundation) though, and will use
+its startup library.
