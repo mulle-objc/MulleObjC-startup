@@ -1,6 +1,6 @@
 # MulleObjC-startup
 
-#### ▶️  Startup library for MulleObjC
+#### ▶️  Startup code for MulleObjC
 
 This static library provides the required `__register_mulle_objc_universe`
 function for executables, that link against
@@ -15,11 +15,20 @@ and nothing else. Often projects will link against the
 [Foundation](//github.com/MulleFoundation/Foundation) though, and will use
 its startup library.
 
+
+
 | Release Version                                       | Release Notes
 |-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag//MulleObjC-startup.svg?branch=release) [![Build Status](https://github.com//MulleObjC-startup/workflows/CI/badge.svg?branch=release)](//github.com//MulleObjC-startup/actions)| [RELEASENOTES](RELEASENOTES.md) |
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC-startup.svg?branch=release) [![Build Status](https://github.com/mulle-objc/MulleObjC-startup/workflows/CI/badge.svg?branch=release)](//github.com/mulle-objc/MulleObjC-startup/actions) | [RELEASENOTES](RELEASENOTES.md) |
 
 
+
+
+
+
+### You are here
+
+![Overview](overview.dot.svg)
 
 
 
@@ -35,10 +44,17 @@ its startup library.
 
 ## Add
 
+**This project is a component of the [mulle-core](//github.com/mulle-core/mulle-core) library. As such you usually will *not* add or install it
+individually, unless you specifically do not want to link against
+`mulle-core`.**
+
+
+### Add as an individual component
+
 Use [mulle-sde](//github.com/mulle-sde) to add MulleObjC-startup to your project:
 
 ``` sh
-mulle-sde add github:/
+mulle-sde add github:mulle-objc/MulleObjC-startup
 ```
 
 To only add the sources of MulleObjC-startup with dependency
@@ -46,10 +62,10 @@ sources use [clib](https://github.com/clibs/clib):
 
 
 ``` sh
-clib install --out src/ /
+clib install --out src/mulle-objc mulle-objc/MulleObjC-startup
 ```
 
-Add `-isystem src/` to your `CFLAGS` and compile all the sources that were downloaded with your project.
+Add `-isystem src/mulle-objc` to your `CFLAGS` and compile all the sources that were downloaded with your project.
 
 
 ## Install
@@ -77,8 +93,10 @@ cmake --build build --config Release &&
 cmake --install build --config Release
 ```
 
+
 ## Author
 
-[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
+
 
 
