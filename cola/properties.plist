@@ -12,12 +12,12 @@
    dependencies =
    (
       {
-         description="🤱🏼 Compatibility library for deterministic initializers";
-         domain="github";
-         name="mulle-atinit";
-         repo="mulle-atinit";
-         url="https://github.com/mulle-core/mulle-atinit";
-         user="mulle-core";
+         description="▶️  Startup code for MulleObjC";
+         domain="";
+         name="# MulleObjC muss no-bequeath sein, wegen dies und das";
+         repo="# MulleObjC muss no-bequeath sein, wegen dies und das";
+         url="MulleObjC muss no-bequeath sein, wegen dies und das";
+         user="";
       },
       {
          description="💎 A collection of Objective-C root classes for mulle-objc";
@@ -28,20 +28,20 @@
          user="mulle-objc";
       },
       {
+         description="🤱🏼 Compatibility library for deterministic initializers";
+         domain="github";
+         name="mulle-atinit";
+         repo="mulle-atinit";
+         url="https://github.com/mulle-core/mulle-atinit";
+         user="mulle-core";
+      },
+      {
          description="👼 Compatibility library to fix atexit";
          domain="github";
          name="mulle-atexit";
          repo="mulle-atexit";
          url="https://github.com/mulle-core/mulle-atexit";
          user="mulle-core";
-      },
-      {
-         description="♿️ Shared library helper";
-         domain="github";
-         name="mulle-dlfcn";
-         repo="mulle-dlfcn";
-         url="https://github.com/mulle-core/mulle-dlfcn";
-         user="mulle-core";
       }
-   )
+   );
 }
