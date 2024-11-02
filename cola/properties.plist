@@ -3,6 +3,8 @@
    {
       description="▶️  Startup code for MulleObjC";
       domain="github";
+      language="c";
+      dialect="objc";
       name="MulleObjC-startup";
       user="mulle-objc";
       repo="MulleObjC-startup";
