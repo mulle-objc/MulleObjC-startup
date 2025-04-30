@@ -1,4 +1,4 @@
-cmake_minimum_required( VERSION 3.14)
+cmake_minimum_required( VERSION 3.13...99.99)
 
 project( MulleObjC-startup VERSION 0.20.6 LANGUAGES C)
 
