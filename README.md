@@ -51,8 +51,8 @@ As long as your sources are using `#import "import-private.h"` and your headers 
 mulle-sde add github:mulle-objc/MulleObjC-startup
 ```
 
-To only add the sources of MulleObjC-startup with dependency
-sources use [clib](https://github.com/clibs/clib):
+To only add the sources of MulleObjC-startup with all the sources of its
+dependencies replace "github:" with [clib:](https://github.com/clibs/clib):
 
 ## Legacy adds
 
@@ -80,15 +80,6 @@ file).
 ### Add as subproject with cmake and git
 
 ``` bash
-git submodule add -f --name "mulle-core" \
-                            "https://github.com/mulle-core/mulle-core.git" \
-                            "stash/mulle-core"
-git submodule add -f --name "mulle-objc-runtime" \
-                            "https://github.com/mulle-objc/mulle-objc-runtime.git" \
-                            "stash/mulle-objc-runtime"
-git submodule add -f --name "mulle-objc-debug" \
-                            "https://github.com/mulle-objc/mulle-objc-debug.git" \
-                            "stash/mulle-objc-debug"
 git submodule add -f --name "mulle-atinit" \
                             "https://github.com/mulle-core/mulle-atinit.git" \
                             "stash/mulle-atinit"
@@ -105,22 +96,14 @@ git submodule update --init --recursive
 add_subdirectory( stash/MulleObjC-startup)
 add_subdirectory( stash/mulle-atexit)
 add_subdirectory( stash/mulle-atinit)
-add_subdirectory( stash/mulle-objc-debug)
-add_subdirectory( stash/mulle-objc-runtime)
-add_subdirectory( stash/mulle-core)
 
 target_link_libraries( ${PROJECT_NAME} PUBLIC MulleObjC-startup)
 target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-atexit)
 target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-atinit)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-objc-debug)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-objc-runtime)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-core)
 ```
 
 
 ## Install
-
-### Install with mulle-sde
 
 Use [mulle-sde](//github.com/mulle-sde) to build and install MulleObjC-startup and all dependencies:
 
@@ -129,15 +112,33 @@ mulle-sde install --prefix /usr/local \
    https://github.com/mulle-objc/MulleObjC-startup/archive/latest.tar.gz
 ```
 
-### Manual Installation
+### Legacy Installation
 
-Install the [Requirements](#Requirements) and then
-install **MulleObjC-startup** with [cmake](https://cmake.org):
+
+#### Requirements
+
+Install all requirements
+
+| Requirements                                 | Description
+|----------------------------------------------|-----------------------
+| [# MulleObjC muss no-bequeath sein, wegen dies und das](MulleObjC muss no-bequeath sein, wegen dies und das)             | ▶️  Startup code for MulleObjC
+| [MulleObjC](https://github.com/mulle-objc/MulleObjC)             | 💎 A collection of Objective-C root classes for mulle-objc
+| [mulle-atinit](https://github.com/mulle-core/mulle-atinit)             | 🤱🏼 Compatibility library for deterministic initializers
+| [mulle-atexit](https://github.com/mulle-core/mulle-atexit)             | 👼 Compatibility library to fix atexit
+
+#### Download & Install
+
+
+Download the latest [tar](https://github.com/mulle-objc/MulleObjC-startup/archive/refs/tags/latest.tar.gz) or [zip](https://github.com/mulle-objc/MulleObjC-startup/archive/refs/tags/latest.zip) archive and unpack it.
+
+Install **MulleObjC-startup** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh
-cmake -B build \
-      -DCMAKE_INSTALL_PREFIX=/usr/local \
-      -DCMAKE_PREFIX_PATH=/usr/local \
+PREFIX_DIR="/usr/local"
+cmake -B build                               \
+      -DMULLE_SDK_PATH="${PREFIX_DIR}"       \
+      -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}" \
+      -DCMAKE_PREFIX_PATH="${PREFIX_DIR}"    \
       -DCMAKE_BUILD_TYPE=Release &&
 cmake --build build --config Release &&
 cmake --install build --config Release
