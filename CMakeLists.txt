@@ -49,6 +49,14 @@ endif()
 include( InstallLibrary)
 
 if( LINK_PHASE)
+   set(SRC_SHARE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/share")
+   if( EXISTS "${SRC_SHARE_DIR}")
+      install(
+         DIRECTORY "${SRC_SHARE_DIR}/"
+         DESTINATION "${INSTALL_SHARE_DIR}"
+         USE_SOURCE_PERMISSIONS
+      )
+   endif()
    include( InstallCMakeInclude)
    include( InstallCMakePackage)
 endif() 
