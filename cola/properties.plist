@@ -14,14 +14,6 @@
    dependencies =
    (
       {
-         description="▶️  Startup code for MulleObjC";
-         domain="";
-         name="# MulleObjC muss no-bequeath sein, wegen dies und das";
-         repo="# MulleObjC muss no-bequeath sein, wegen dies und das";
-         url="MulleObjC muss no-bequeath sein, wegen dies und das";
-         user="";
-      },
-      {
          description="💎 A collection of Objective-C root classes for mulle-objc";
          domain="github";
          name="MulleObjC";

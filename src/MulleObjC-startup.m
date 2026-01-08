@@ -1,5 +1,5 @@
 //
-//  MulleObjCStandalone.m
+//  MulleObjC-startup.m
 //  MulleObjC
 //
 //  Copyright (c) 2016 Nat! - Mulle kybernetiK.
@@ -34,6 +34,11 @@
 //  POSSIBILITY OF SUCH DAMAGE.
 //
 #define _GNU_SOURCE
+
+// need MULLE_OBJC_DEFINE__register_mulle_objc_universe to get dllexport 
+// for our symbol defined in <MulleObjC/mulle-objc-startup-private.inc>
+
+#define MULLE_OBJC_DEFINE__register_mulle_objc_universe
 
 #import <MulleObjC/MulleObjC.h>
 
