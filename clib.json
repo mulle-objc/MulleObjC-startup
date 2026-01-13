@@ -1,6 +1,6 @@
 {
    "name" : "MulleObjC-startup",
-   "version" : "0.20.4",
+   "version" : "0.20.7",
    "description" : "▶️  Startup code for MulleObjC",
    "keywords" : [],
    "license" : "BSD-3-Clause",
@@ -9,8 +9,6 @@
       "src/MulleObjC-startup.m"
    ],
    "dependencies" : {
-      "mulle-objc/MulleObjC": "*",
-      "mulle-core/mulle-atinit": "*",
-      "mulle-core/mulle-atexit": "*"
+      "mulle-objc/MulleObjC": "*"
    }
 }
