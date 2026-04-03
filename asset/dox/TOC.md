@@ -1,4 +1,5 @@
 # MulleObjC-startup Library Documentation for AI
+<!-- Keywords: startup, initialization -->
 
 ## 1. Introduction & Purpose
 

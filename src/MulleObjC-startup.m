@@ -35,11 +35,6 @@
 //
 #define _GNU_SOURCE
 
-// need MULLE_OBJC_DEFINE__register_mulle_objc_universe to get dllexport 
-// for our symbol defined in <MulleObjC/mulle-objc-startup-private.inc>
-
-#define MULLE_OBJC_DEFINE__register_mulle_objc_universe
-
 #import <MulleObjC/MulleObjC.h>
 
 #import <MulleObjC/mulle-objc-exceptionhandlertable-private.h>
@@ -53,7 +48,7 @@
 #include <stdlib.h>
 
 
-#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (20 << 8) | 7)
+#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (21 << 8) | 0)
 
 
 //
