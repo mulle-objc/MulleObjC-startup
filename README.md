@@ -36,6 +36,7 @@ its startup library.
 
 |   Requirement         | Release Version  | Description
 |-----------------------|------------------|---------------
+| [# MulleObjC muss no-bequeath sein, wegen dies und das](MulleObjC muss no-bequeath sein, wegen dies und das) | - | ▶️  Startup code for MulleObjC
 | [MulleObjC](https://github.com/mulle-objc/MulleObjC) | ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-objc/MulleObjC.svg) [![Build Status](https://github.com/mulle-objc/MulleObjC/workflows/CI/badge.svg?branch=release)](https://github.com/mulle-objc/MulleObjC/actions/workflows/mulle-sde-ci.yml) | 💎 A collection of Objective-C root classes for mulle-objc
 
 
@@ -97,12 +98,6 @@ git submodule add -f --name "mulle-core" \
 git submodule add -f --name "libbacktrace" \
                             "https://github.com/mulle-core/libbacktrace.git" \
                             "stash/libbacktrace"
-git submodule add -f --name "mulle-allocator" \
-                            "https://github.com/mulle-c/mulle-allocator.git" \
-                            "stash/mulle-allocator"
-git submodule add -f --name "mulle-thread" \
-                            "https://github.com/mulle-concurrent/mulle-thread.git" \
-                            "stash/mulle-thread"
 git submodule add -f --name "mulle-core-all-load" \
                             "https://github.com/mulle-core/mulle-core-all-load.git" \
                             "stash/mulle-core-all-load"
@@ -123,8 +118,6 @@ add_subdirectory( stash/MulleObjC-startup)
 add_subdirectory( stash/mulle-objc-debug)
 add_subdirectory( stash/mulle-objc-runtime)
 add_subdirectory( stash/mulle-core-all-load)
-add_subdirectory( stash/mulle-thread)
-add_subdirectory( stash/mulle-allocator)
 add_subdirectory( stash/libbacktrace)
 add_subdirectory( stash/mulle-core)
 
@@ -132,8 +125,6 @@ target_link_libraries( ${PROJECT_NAME} PUBLIC MulleObjC-startup)
 target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-objc-debug)
 target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-objc-runtime)
 target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-core-all-load)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-thread)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-allocator)
 target_link_libraries( ${PROJECT_NAME} PUBLIC libbacktrace)
 target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-core)
 ```
@@ -157,6 +148,7 @@ Install all requirements
 
 | Requirements                                 | Description
 |----------------------------------------------|-----------------------
+| [# MulleObjC muss no-bequeath sein, wegen dies und das](MulleObjC muss no-bequeath sein, wegen dies und das)             | ▶️  Startup code for MulleObjC
 | [MulleObjC](https://github.com/mulle-objc/MulleObjC)             | 💎 A collection of Objective-C root classes for mulle-objc
 
 #### Download & Install
