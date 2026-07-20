@@ -48,7 +48,7 @@
 #include <stdlib.h>
 
 
-#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (21 << 8) | 0)
+#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (21 << 8) | 1)
 
 
 //
