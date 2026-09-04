@@ -10,6 +10,7 @@
       "src/MulleObjC-startup.m"
    ],
    "dependencies" : {
+      "mulle-core/mulle-stacktrace": "*",
       "mulle-objc/MulleObjC": "*"
    }
 }

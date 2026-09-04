@@ -1,8 +1,8 @@
 //
 //  MulleObjC-startup.m
-//  MulleObjC
+//  MulleObjC-startup
 //
-//  Copyright (c) 2016 Nat! - Mulle kybernetiK.
+//  Copyright (c) 2018 Nat! - Mulle kybernetiK.
 //  Copyright (c) 2016 Codeon GmbH.
 //  All rights reserved.
 //
@@ -47,8 +47,19 @@
 // std-c and other dependencies
 #include <stdlib.h>
 
+#include <mulle-stacktrace/mulle-stacktrace.h>
+#include <mulle-objc-runtime/mulle-objc-universe-fail.h>
 
-#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (21 << 8) | 1)
+// Keep this usable with older cached MulleObjC headers. The symbol is supplied
+// by the runtime built alongside this startup library.
+MULLE_OBJC_RUNTIME_GLOBAL
+void
+   mulle_objc_universe_set_stacktrace_callback(
+      struct _mulle_objc_universe *universe,
+      void (*callback)( FILE *fp));
+
+
+#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (22 << 8) | 0)
 
 
 //
@@ -65,5 +76,7 @@ static void   bang( struct _mulle_objc_universe *universe,
            sizeof( config));
 
    MulleObjCBang( universe, allocator, &config);
+   mulle_objc_universe_set_stacktrace_callback( universe,
+                                                 mulle_stacktrace_once);
 }
 

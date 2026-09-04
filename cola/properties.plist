@@ -6,6 +6,7 @@
       language="c";
       dialect="objc";
       name="MulleObjC-startup";
+      version="0.22.0";
       user="mulle-objc";
       repo="MulleObjC-startup";
       homepage="https://github.com/mulle-objc/MulleObjC-startup";
