@@ -6,7 +6,6 @@
       language="c";
       dialect="objc";
       name="MulleObjC-startup";
-      version="0.22.0";
       user="mulle-objc";
       repo="MulleObjC-startup";
       homepage="https://github.com/mulle-objc/MulleObjC-startup";
@@ -14,14 +13,6 @@
    };
    dependencies =
    (
-      {
-         description="▶️  Startup code for MulleObjC";
-         domain="";
-         name="# MulleObjC muss no-bequeath sein, wegen dies und das";
-         repo="# MulleObjC muss no-bequeath sein, wegen dies und das";
-         url="MulleObjC muss no-bequeath sein, wegen dies und das";
-         user="";
-      },
       {
          description="💎 A collection of Objective-C root classes for mulle-objc";
          domain="github";

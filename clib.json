@@ -1,16 +1,15 @@
 {
    "name" : "MulleObjC-startup",
-   "version" : "0.21.1",
+   "version" : "0.22.0",
    "description" : "▶️  Startup code for MulleObjC",
    "keywords" : [],
    "license" : "BSD-3-Clause",
    "repo" : "mulle-objc/MulleObjC-startup",
    "src" : [
-      "asset/dox/TOC.md",
+      "asset/dox/api/toc/index.md",
       "src/MulleObjC-startup.m"
    ],
    "dependencies" : {
-      "mulle-core/mulle-stacktrace": "*",
       "mulle-objc/MulleObjC": "*"
    }
 }
