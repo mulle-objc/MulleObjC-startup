@@ -59,7 +59,7 @@ void
       void (*callback)( FILE *fp));
 
 
-#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (22 << 8) | 0)
+#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (23 << 8) | 0)
 
 
 //

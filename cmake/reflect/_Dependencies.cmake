@@ -5,7 +5,7 @@
 #
 # Disable generation of this file with:
 #
-# mulle-sde environment set MULLE_SOURCETREE_TO_CMAKE_DEPENDENCIES_FILE DISABLE
+# mulle-sde environment --global set MULLE_SOURCETREE_TO_CMAKE_DEPENDENCIES_FILE DISABLE
 #
 if( MULLE_TRACE_INCLUDE)
    message( STATUS "# Include \"${CMAKE_CURRENT_LIST_FILE}\"" )
@@ -38,7 +38,11 @@ foreach( _TMP_MULLE_OBJC_HEADER_TARGET_TARGET MulleObjC)
       break()
    endif()
 endforeach()
-if( NOT MULLE_OBJC_HEADER AND NOT MULLE_OBJC_HEADER_TARGET)
+if( MULLE_OBJC_HEADER_TARGET)
+   set( MULLE_OBJC_HEADER ${MULLE_OBJC_HEADER_TARGET})
+endif()
+
+if( NOT MULLE_OBJC_HEADER)
    find_file( MULLE_OBJC_HEADER NAMES
       MulleObjC.h MulleObjC/MulleObjC.h
       NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH NO_CMAKE_FIND_ROOT_PATH
@@ -49,24 +53,25 @@ if( NOT MULLE_OBJC_HEADER AND NOT MULLE_OBJC_HEADER_TARGET)
       )
    endif()
    message( STATUS "MULLE_OBJC_HEADER is ${MULLE_OBJC_HEADER}")
+endif()
 
+#
+# Add MULLE_OBJC_HEADER to HEADER_ONLY_LIBRARIES list.
+# Disable with: `mulle-sourcetree mark MulleObjC no-cmake-add`
+#
+set( HEADER_ONLY_LIBRARIES
+   ${MULLE_OBJC_HEADER}
+   ${HEADER_ONLY_LIBRARIES}
+)
+if( MULLE_OBJC_HEADER)
    #
-   # Add MULLE_OBJC_HEADER to HEADER_ONLY_LIBRARIES list.
-   # Disable with: `mulle-sourcetree mark MulleObjC no-cmake-add`
+   # Inherit ObjC loader and link dependency info.
+   # Disable with: `mulle-sourcetree mark MulleObjC no-cmake-inherit`
    #
-   set( HEADER_ONLY_LIBRARIES
-      ${MULLE_OBJC_HEADER}
-      ${HEADER_ONLY_LIBRARIES}
-   )
-   if( MULLE_OBJC_HEADER)
-      #
-      # Inherit ObjC loader and link dependency info.
-      # Disable with: `mulle-sourcetree mark MulleObjC no-cmake-inherit`
-      #
-      get_filename_component( _TMP_MULLE_OBJC_ROOT "${MULLE_OBJC_HEADER}" DIRECTORY)
-      get_filename_component( _TMP_MULLE_OBJC_NAME "${_TMP_MULLE_OBJC_ROOT}" NAME)
-      get_filename_component( _TMP_MULLE_OBJC_ROOT "${_TMP_MULLE_OBJC_ROOT}" DIRECTORY)
-      get_filename_component( _TMP_MULLE_OBJC_ROOT "${_TMP_MULLE_OBJC_ROOT}" DIRECTORY)
+   get_filename_component( _TMP_MULLE_OBJC_ROOT "${MULLE_OBJC_HEADER}" DIRECTORY)
+   get_filename_component( _TMP_MULLE_OBJC_NAME "${_TMP_MULLE_OBJC_ROOT}" NAME)
+   get_filename_component( _TMP_MULLE_OBJC_ROOT "${_TMP_MULLE_OBJC_ROOT}" DIRECTORY)
+   get_filename_component( _TMP_MULLE_OBJC_ROOT "${_TMP_MULLE_OBJC_ROOT}" DIRECTORY)
       #
       # Search for "Definitions.cmake" and "DependenciesAndLibraries.cmake" to include.
       # Disable with: `mulle-sourcetree mark MulleObjC no-cmake-dependency`
@@ -100,8 +105,7 @@ if( NOT MULLE_OBJC_HEADER AND NOT MULLE_OBJC_HEADER_TARGET)
             message( STATUS "${_TMP_MULLE_OBJC_DIR} not found")
          endif()
       endforeach()
-   else()
-      # Disable with: `mulle-sourcetree mark MulleObjC no-require`
-      message( SEND_ERROR "MULLE_OBJC_HEADER was not found in MulleObjC.h MulleObjC/MulleObjC.h")
-   endif()
+else()
+   # Disable with: `mulle-sourcetree mark MulleObjC no-require`
+   message( SEND_ERROR "MULLE_OBJC_HEADER was not found in MulleObjC.h MulleObjC/MulleObjC.h")
 endif()

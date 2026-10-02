@@ -10,6 +10,7 @@
       repo="MulleObjC-startup";
       homepage="https://github.com/mulle-objc/MulleObjC-startup";
       license="BSD-3-Clause";
+      version="0.23.0";
    };
    dependencies =
    (

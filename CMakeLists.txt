@@ -1,6 +1,15 @@
 cmake_minimum_required( VERSION 3.13...99.99)
 
-project( MulleObjC-startup VERSION 0.22.0 LANGUAGES C)
+project( MulleObjC-startup VERSION 0.23.0 LANGUAGES C)
+
+# MulleObjC-startup is a force-linkable initialization library: its
+# atinit/atexit constructors must be whole-archived into every consumer, even
+# when no symbol of it is referenced directly. Objective-C projects want this
+# ON. A plain C project that does not rely on load-time constructors should
+# turn it OFF, so its consumers do not pull in the whole archive.
+option( MULLE_LIBRARY_FORCE_LINK
+        "Force-link MulleObjC-startup into consumers"
+        ON)
 
 
 ### mulle-sde environment
@@ -57,8 +66,9 @@ if( LINK_PHASE)
          USE_SOURCE_PERMISSIONS
       )
    endif()
-   include( InstallCMakeInclude)
-   include( InstallCMakePackage)
+   include( AddSubdirectorySupport)
+   include( FindPackageSupport)
+   include( AllLoadSupport)
 endif() 
 
 include( FinalOutput OPTIONAL)
