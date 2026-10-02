@@ -90,3 +90,8 @@ test*/**/*.test.*
 .kiro/
 TODO.md
 REVIEW.md
+.touch
+*.orig
+*.workspace
+*.*-workspace
+research/
