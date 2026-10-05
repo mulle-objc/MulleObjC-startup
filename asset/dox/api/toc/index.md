@@ -87,11 +87,11 @@ void
 #### Compile-time macro: `MULLE_OBJC__STARTUP_VERSION`
 
 ```c
-#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (22 << 8) | 0)
+#define MULLE_OBJC__STARTUP_VERSION  ((0UL << 20) | (23 << 8) | 0)
 ```
 
-- Encodes the startup library version (22 << 8 = version 22.0). Matches the
-  CMake project version 0.22.0.
+- Encodes the startup library version (23 << 8 = version 23.0). Matches the
+  CMake project version 0.23.0.
 
 #### Internal static routine: `bang`
 
