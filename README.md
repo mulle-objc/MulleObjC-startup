@@ -93,44 +93,24 @@ file).
 
 
 
-### Add as subproject with cmake and git
+### Add as subproject with cmake
 
-``` bash
-git submodule add -f --name "mulle-core" \
-                            "https://github.com/mulle-core/mulle-core.git" \
-                            "stash/mulle-core"
-git submodule add -f --name "libbacktrace" \
-                            "https://github.com/mulle-core/libbacktrace.git" \
-                            "stash/libbacktrace"
-git submodule add -f --name "mulle-core-all-load" \
-                            "https://github.com/mulle-core/mulle-core-all-load.git" \
-                            "stash/mulle-core-all-load"
-git submodule add -f --name "mulle-objc-runtime" \
-                            "https://github.com/mulle-objc/mulle-objc-runtime.git" \
-                            "stash/mulle-objc-runtime"
-git submodule add -f --name "mulle-objc-debug" \
-                            "https://github.com/mulle-objc/mulle-objc-debug.git" \
-                            "stash/mulle-objc-debug"
-git submodule add -f --name "MulleObjC-startup" \
-                            "https://github.com/mulle-objc/MulleObjC-startup" \
-                            "stash/MulleObjC-startup"
-git submodule update --init --recursive
-```
+Add MulleObjC-startup and its dependencies to your `CMakeLists.txt` with
+[FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html):
 
 ``` cmake
-add_subdirectory( stash/MulleObjC-startup)
-add_subdirectory( stash/mulle-objc-debug)
-add_subdirectory( stash/mulle-objc-runtime)
-add_subdirectory( stash/mulle-core-all-load)
-add_subdirectory( stash/libbacktrace)
-add_subdirectory( stash/mulle-core)
+include( FetchContent)
+
+include_directories( SYSTEM "${CMAKE_BINARY_DIR}/include")
+
+set( MULLEOBJC__STARTUP_TAG "master" CACHE STRING "branch or tag to fetch MulleObjC-startup from")
+
+FetchContent_Declare( MULLEOBJC__STARTUP
+   GIT_REPOSITORY https://github.com/mulle-objc/MulleObjC-startup.git
+   GIT_TAG        "${MULLEOBJC__STARTUP_TAG}")
+FetchContent_MakeAvailable( MULLEOBJC__STARTUP)
 
 target_link_libraries( ${PROJECT_NAME} PUBLIC MulleObjC-startup)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-objc-debug)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-objc-runtime)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-core-all-load)
-target_link_libraries( ${PROJECT_NAME} PUBLIC libbacktrace)
-target_link_libraries( ${PROJECT_NAME} PUBLIC mulle-core)
 ```
 
 
