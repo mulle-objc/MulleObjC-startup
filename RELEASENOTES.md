@@ -3,6 +3,12 @@
 
 
 
+
+
+
+
+
+
 feature: make MulleObjC-startup consumable via `add_subdirectory` and `find_package`
 
 * force-link the library into consumers so its atinit/atexit constructors run even when no symbol is referenced
