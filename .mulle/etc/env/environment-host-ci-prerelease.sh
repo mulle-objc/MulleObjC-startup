@@ -17,39 +17,57 @@ export MULLE_OBJC_BRANCH="prerelease"
 
 
 #
-# mulle-objc-runtime nodetype: ${MULLE__OBJC__RUNTIME_NODETYPE:-tar}
+# libbacktrace nodetype: ${LIBBACKTRACE_NODETYPE:-tar}
 #
-export MULLE__OBJC__RUNTIME_NODETYPE="git"
+export LIBBACKTRACE_NODETYPE="git"
 
 
 #
-# mulle-objc-runtime url: ${MULLE__OBJC__RUNTIME_URL:-https://github.com/mulle-objc/mulle-objc-runtime/archive/${MULLE_TAG}.tar.gz}
+# libbacktrace url: ${LIBBACKTRACE_URL:-https://github.com/mulle-core/libbacktrace/archive/${MULLE_TAG}.tar.gz}
 #
-export MULLE__OBJC__RUNTIME_URL="https://github.com/mulle-objc/mulle-objc-runtime.git"
+export LIBBACKTRACE_URL="https://github.com/mulle-core/libbacktrace.git"
 
 
 #
-# mulle-objc-runtime branch: ${MULLE__OBJC__RUNTIME_BRANCH}
+# libbacktrace branch: ${LIBBACKTRACE_BRANCH}
 #
-export MULLE__OBJC__RUNTIME_BRANCH="prerelease"
+export LIBBACKTRACE_BRANCH="prerelease"
 
 
 #
-# mulle-core nodetype: ${MULLE__CORE_NODETYPE:-tar}
+# mulle-allocator nodetype: ${MULLE__ALLOCATOR_NODETYPE:-tar}
 #
-export MULLE__CORE_NODETYPE="git"
+export MULLE__ALLOCATOR_NODETYPE="git"
 
 
 #
-# mulle-core url: ${MULLE__CORE_URL:-https://github.com/mulle-core/mulle-core/archive/${MULLE_TAG}.tar.gz}
+# mulle-allocator url: ${MULLE__ALLOCATOR_URL:-https://github.com/mulle-c/mulle-allocator/archive/${MULLE_TAG}.tar.gz}
 #
-export MULLE__CORE_URL="https://github.com/mulle-core/mulle-core.git"
+export MULLE__ALLOCATOR_URL="https://github.com/mulle-c/mulle-allocator.git"
 
 
 #
-# mulle-core branch: ${MULLE__CORE_BRANCH}
+# mulle-allocator branch: ${MULLE__ALLOCATOR_BRANCH}
 #
-export MULLE__CORE_BRANCH="prerelease"
+export MULLE__ALLOCATOR_BRANCH="prerelease"
+
+
+#
+# mulle-c11 nodetype: ${MULLE__C11_NODETYPE:-tar}
+#
+export MULLE__C11_NODETYPE="git"
+
+
+#
+# mulle-c11 url: ${MULLE__C11_URL:-https://github.com/mulle-c/mulle-c11/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE__C11_URL="https://github.com/mulle-c/mulle-c11.git"
+
+
+#
+# mulle-c11 branch: ${MULLE__C11_BRANCH}
+#
+export MULLE__C11_BRANCH="prerelease"
 
 
 #
@@ -71,21 +89,39 @@ export MULLE__CORE__ALL__LOAD_BRANCH="prerelease"
 
 
 #
-# mulle-objc-debug nodetype: ${MULLE__OBJC__DEBUG_NODETYPE:-tar}
+# mulle-core nodetype: ${MULLE__CORE_NODETYPE:-tar}
 #
-export MULLE__OBJC__DEBUG_NODETYPE="git"
+export MULLE__CORE_NODETYPE="git"
 
 
 #
-# mulle-objc-debug url: ${MULLE__OBJC__DEBUG_URL:-https://github.com/mulle-objc/mulle-objc-debug/archive/${MULLE_TAG}.tar.gz}
+# mulle-core url: ${MULLE__CORE_URL:-https://github.com/mulle-core/mulle-core/archive/${MULLE_TAG}.tar.gz}
 #
-export MULLE__OBJC__DEBUG_URL="https://github.com/mulle-objc/mulle-objc-debug.git"
+export MULLE__CORE_URL="https://github.com/mulle-core/mulle-core.git"
 
 
 #
-# mulle-objc-debug branch: ${MULLE__OBJC__DEBUG_BRANCH}
+# mulle-core branch: ${MULLE__CORE_BRANCH}
 #
-export MULLE__OBJC__DEBUG_BRANCH="prerelease"
+export MULLE__CORE_BRANCH="prerelease"
+
+
+#
+# mulle-dlfcn nodetype: ${MULLE__DLFCN_NODETYPE:-tar}
+#
+export MULLE__DLFCN_NODETYPE="git"
+
+
+#
+# mulle-dlfcn url: ${MULLE__DLFCN_URL:-https://github.com/mulle-core/mulle-dlfcn/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE__DLFCN_URL="https://github.com/mulle-core/mulle-dlfcn.git"
+
+
+#
+# mulle-dlfcn branch: ${MULLE__DLFCN_BRANCH}
+#
+export MULLE__DLFCN_BRANCH="prerelease"
 
 
 #
@@ -107,6 +143,42 @@ export MULLE__OBJC__CC_BRANCH="prerelease"
 
 
 #
+# mulle-objc-debug nodetype: ${MULLE__OBJC__DEBUG_NODETYPE:-tar}
+#
+export MULLE__OBJC__DEBUG_NODETYPE="git"
+
+
+#
+# mulle-objc-debug url: ${MULLE__OBJC__DEBUG_URL:-https://github.com/mulle-objc/mulle-objc-debug/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE__OBJC__DEBUG_URL="https://github.com/mulle-objc/mulle-objc-debug.git"
+
+
+#
+# mulle-objc-debug branch: ${MULLE__OBJC__DEBUG_BRANCH}
+#
+export MULLE__OBJC__DEBUG_BRANCH="prerelease"
+
+
+#
+# mulle-objc-runtime nodetype: ${MULLE__OBJC__RUNTIME_NODETYPE:-tar}
+#
+export MULLE__OBJC__RUNTIME_NODETYPE="git"
+
+
+#
+# mulle-objc-runtime url: ${MULLE__OBJC__RUNTIME_URL:-https://github.com/mulle-objc/mulle-objc-runtime/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE__OBJC__RUNTIME_URL="https://github.com/mulle-objc/mulle-objc-runtime.git"
+
+
+#
+# mulle-objc-runtime branch: ${MULLE__OBJC__RUNTIME_BRANCH}
+#
+export MULLE__OBJC__RUNTIME_BRANCH="prerelease"
+
+
+#
 # mulle-objc-tools nodetype: ${MULLE__OBJC__TOOLS_NODETYPE:-tar}
 #
 export MULLE__OBJC__TOOLS_NODETYPE="git"
@@ -122,5 +194,23 @@ export MULLE__OBJC__TOOLS_URL="https://github.com/mulle-objc/mulle-objc-tools.gi
 # mulle-objc-tools branch: ${MULLE__OBJC__TOOLS_BRANCH}
 #
 export MULLE__OBJC__TOOLS_BRANCH="prerelease"
+
+
+#
+# mulle-thread nodetype: ${MULLE__THREAD_NODETYPE:-tar}
+#
+export MULLE__THREAD_NODETYPE="git"
+
+
+#
+# mulle-thread url: ${MULLE__THREAD_URL:-https://github.com/mulle-concurrent/mulle-thread/archive/${MULLE_TAG}.tar.gz}
+#
+export MULLE__THREAD_URL="https://github.com/mulle-concurrent/mulle-thread.git"
+
+
+#
+# mulle-thread branch: ${MULLE__THREAD_BRANCH}
+#
+export MULLE__THREAD_BRANCH="prerelease"
 
 
